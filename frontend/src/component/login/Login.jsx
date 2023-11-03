@@ -1,14 +1,33 @@
 import './Login.css';
+import {useNavigate} from 'react-router-dom'
 
 function Login(props) {
-
-    function handleSubmit(e) {
+    const navigate = useNavigate();
+    async function handleSubmit(e) {
         e.preventDefault();
-        console.log(e.target);
-        console.log(e.target.username);
-        console.log(e.target.username.value);
-        console.log(e.target.password);
-        console.log(e.target.password.value);
+        let user = {
+            username: e.target.username.value,
+            password: e.target.password.value,
+
+        }
+
+        let background_url = 'http://localhost:3200/login';
+        let options = {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(user)
+        }
+
+        let response = await fetch(background_url, options);
+        let responseData = await response.json();
+        if (responseData.flag === true) {
+            navigate('/restaurant');
+        }
+        else {
+            alert(responseData.msg);
+        }
+
+
     }
     return (
         <div className='pri'>
@@ -27,7 +46,7 @@ function Login(props) {
                     </div>
                 </form>
             </div>
-           
+
         </div>
     );
 }

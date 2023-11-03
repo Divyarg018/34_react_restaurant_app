@@ -1,9 +1,15 @@
+import { Router, Routes } from 'react-router-dom';
 import './App.css';
+
 
 function App() {
   return (
+    <Router>
+     
+
+    </Router>
     
-    <h1>Restaurant App</h1>
+   
     
   );
 }

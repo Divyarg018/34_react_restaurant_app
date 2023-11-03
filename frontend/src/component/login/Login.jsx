@@ -12,7 +12,7 @@ function Login(props) {
     }
     return (
         <div className='pri'>
-            <div className='content'>
+            <div className='wrapper'>
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <div className='container'>
@@ -27,7 +27,7 @@ function Login(props) {
                     </div>
                 </form>
             </div>
-            <Copyright className="copyright" />
+           
         </div>
     );
 }

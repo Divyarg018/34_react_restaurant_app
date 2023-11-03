@@ -1,8 +1,8 @@
 import './Login.css';
 
-function Login(props){
+function Login(props) {
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault();
         console.log(e.target);
         console.log(e.target.username);
@@ -10,14 +10,24 @@ function Login(props){
         console.log(e.target.password);
         console.log(e.target.password.value);
     }
-    return(
-        <div>
-          <h1>Login Form</h1>
-          <form onSubmit={handleSubmit}>
-            Username: <input type='text' name='username' id='username' /><br />
-            Password: <input type='password' name='password' id='password' />
-            <input type='submit' value="login" />
-          </form>
+    return (
+        <div className='pri'>
+            <div className='content'>
+                <h1>Login</h1>
+                <form onSubmit={handleSubmit}>
+                    <div className='container'>
+                        <label htmlFor='username'><b>Username</b></label>
+                        <input type='text' name='username' id='username' /><br />
+
+
+                        <label htmlFor='password'><b>Password</b></label>
+                        <input type='password' name='password' id='password' />
+
+                        <button type='submit'>Login</button>
+                    </div>
+                </form>
+            </div>
+            <Copyright className="copyright" />
         </div>
     );
 }

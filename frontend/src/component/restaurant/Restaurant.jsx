@@ -19,14 +19,25 @@ function Restaurant(props) {
         // };
     }
 
-    useEffect(() => {
+    useEffect(() => { 
         getData();
     }, []);
 
-    let arr = ['divya', 'archana', 'chaithanya'];
+    // let arr = ['divya', 'archana', 'chaithanya'];
     return (
-        <div>
-            <h1>{ arr }</h1>
+        <div className='pri'>
+            <div>
+                <h1>Food Menu</h1>
+                {
+                    menuData.foodData
+                }
+                 <h1>Drink Menu</h1>
+                {
+                    menuData.drinkData
+                }
+            </div>
+          
+            
         </div>
     );
 }

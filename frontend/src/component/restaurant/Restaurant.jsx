@@ -12,14 +12,14 @@ function Restaurant(props) {
         let backend_url = 'http://localhost:3200/data';
         let response = await fetch(backend_url);
         let responseData = await response.json();
-        setMenuData ( {
+        setMenuData({
             flag: true,
             foodData: responseData[0],
             drinkData: responseData[1]
         });
     }
 
-    useEffect(() => { 
+    useEffect(() => {
         getData();
     }, []);
 
@@ -27,15 +27,15 @@ function Restaurant(props) {
     return (
         <div className='pri'>
             <div>
-               
+
                 {menuData.flag ? <h1>{menuData.foodData[0].foodName}</h1> : <h1>Loading</h1>}
 
                 {menuData.flag ? <h1>{menuData.drinkData[0].drinkName}</h1> : <h1>Loading</h1>}
-                
-              
+
+
             </div>
-          
-            
+
+
         </div>
     );
 }

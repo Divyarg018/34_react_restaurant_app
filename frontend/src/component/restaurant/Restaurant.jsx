@@ -23,14 +23,32 @@ function Restaurant(props) {
         getData();
     }, []);
 
-    // let arr = ['divya', 'archana', 'chaithanya'];
     return (
         <div className='pri'>
             <div>
+                <h1> Food Menu</h1>
 
-                {menuData.flag ? <h1>{menuData.foodData[0].foodName}</h1> : <h1>Loading</h1>}
+                {
+                    menuData.flag ? menuData.foodData.map(item => {
+                        return <li key={item.foodName}>
+                            Food Name is {item.foodName}, Price: {item.price}, Category: {item.category}
+                        </li>
+                    }) : <h1>Loading</h1>
+                }
 
-                {menuData.flag ? <h1>{menuData.drinkData[0].drinkName}</h1> : <h1>Loading</h1>}
+                <h1> Drink Menu</h1>
+
+                {
+                    menuData.flag ? menuData.drinkData.map(item => {
+                        return <li key={item.drinkName}>
+                            Drink Name is {item.drinkName}, Price: {item.price}, Category: {item.category}
+                        </li>
+                    }) : <h1>Loading</h1>
+                }
+
+
+
+
 
 
             </div>

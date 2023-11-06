@@ -2,7 +2,11 @@ import { useState, useEffect } from 'react';
 import './Restaurant.css';
 
 function Restaurant(props){
- 
+    const [menuData, setMenuData] = useState({
+        flag: false,
+        foodData: null,
+        drinkData: null
+    });
 
     async function getData(){
         let backend_url = 'http://localhost:3200/data';
@@ -12,7 +16,9 @@ function Restaurant(props){
         console.log(responseData);
     }
 
-  
+    useEffect(() =>{
+        getData();
+    }, []);
 
     return(
         <div>

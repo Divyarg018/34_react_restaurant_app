@@ -41,7 +41,7 @@ function Restaurant(props) {
                           {item.foodName} is an amazing Dish. You should try it.
                           </Card.Text>
                           Category:
-                          <img onScroll={(item.category === 'veg') ? 'images/veg.png' : 'images/non-veg.png'}
+                          <img src={(item.category === 'veg') ? 'images/veg.png' : 'images/non-veg.png'}
                           height="30px" width="30px" />
                           <Button variant="primary">Buy Now</Button>
                         </Card.Body>

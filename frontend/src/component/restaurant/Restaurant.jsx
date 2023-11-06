@@ -11,9 +11,12 @@ function Restaurant(props){
     async function getData(){
         let backend_url = 'http://localhost:3200/data';
         let response = await fetch(backend_url);
-
-        let responseData = await response.json();
-        console.log(responseData);
+let responseData = await response.json();
+      setMenuData = {
+        flag: true,
+        foodData: responseData[0],
+        drinkData: responseData[1]
+      };
     }
 
     useEffect(() =>{
